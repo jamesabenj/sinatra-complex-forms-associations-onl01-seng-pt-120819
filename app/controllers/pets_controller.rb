@@ -13,7 +13,7 @@ class PetsController < ApplicationController
 
   post '/pets' do
     binding.pry
-    pet = Pet.create(name: params[:pet_name], owner_id: params[:pet][:owner_id])
+    pet = Pet.create(name: params[:pet_name], owner_id: params[:pet][:owner_id][])
     owner = Owner.find(params[:pet][:owner_id])
     owner.pets << pet
     redirect to "/pets/#{pet.id}"
