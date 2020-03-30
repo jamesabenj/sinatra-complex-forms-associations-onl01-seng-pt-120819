@@ -18,8 +18,8 @@ class PetsController < ApplicationController
       owner.pets << pet
       owner.save
     else
-    owner = Owner.find(params[:pet][:owner_id])
-    owner.first.pets << pet
+      owner = Owner.find(params[:pet][:owner_id])
+      owner.first.pets << pet
     binding.pry
     redirect to "/pets/#{pet.id}"
   end
