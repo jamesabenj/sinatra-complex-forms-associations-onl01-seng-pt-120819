@@ -12,7 +12,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-    pet = Pet.create(name: params[:pet_name], owner_id: params[:pet][:owner_id])
+    pet = Pet.create(name: params[:pet_name])
     owner = Owner.find(params[:pet][:owner_id])
     owner.first.pets << pet
     binding.pry
