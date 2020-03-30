@@ -13,12 +13,12 @@ class PetsController < ApplicationController
 
   post '/pets' do
     #binding.pry
-    @pet = Pet.new(name: params[:pet_name],owner_id: params[:pet][:owner_id])
+    pet = Pet.new(name: params[:pet_name],owner_id: params[:pet][:owner_id])
     binding.pry
-    Owner.find(params[:pet][:owner_id])
+    owner = Owner.find(params[:pet][:owner_id])
     @pet.owner << owner
     end
-    redirect to "/pets/#{@pet.id}"
+    redirect to "/pets/#{pet.id}"
   end
 
   get '/pets/:id' do
