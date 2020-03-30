@@ -30,6 +30,10 @@ class PetsController < ApplicationController
     erb :'/pets/show'
   end
 
+  get '/pet/:id/edit' do
+    
+  end
+
   patch '/pets/:id' do
 
     redirect to "pets/#{@pet.id}"
