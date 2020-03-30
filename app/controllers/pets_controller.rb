@@ -31,7 +31,7 @@ class PetsController < ApplicationController
   end
 
   get '/pet/:id/edit' do
-    
+    erb :edit
   end
 
   patch '/pets/:id' do
