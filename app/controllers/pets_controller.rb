@@ -14,7 +14,6 @@ class PetsController < ApplicationController
   post '/pets' do
     #binding.pry
     pet = Pet.new(name: params[:pet_name],owner_id: params[:pet][:owner_id])
-    binding.pry
     owner = Owner.find(params[:pet][:owner_id])
     owner.pets << pet
     end
