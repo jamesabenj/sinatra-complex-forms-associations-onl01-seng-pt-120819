@@ -12,8 +12,8 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-    Pet.create(params[:pet])
-    redirect to "pets/#{@pet.id}"
+    Pet.create(name: params[:pet_name], owner_id: params[])
+    redirect to "/pets/#{@pet.id}"
   end
 
   get '/pets/:id' do
