@@ -15,7 +15,7 @@ class PetsController < ApplicationController
     pet = Pet.create(name: params[:pet_name])
     if params[:owner_name]
     owner = Owner.new(name: params[:owner_name])
-    else 
+    else
     owner = Owner.find(params[:pet][:owner_id])
     owner.first.pets << pet
     binding.pry
